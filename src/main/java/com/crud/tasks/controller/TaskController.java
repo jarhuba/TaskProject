@@ -27,7 +27,7 @@ public class TaskController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "getTask/{taskId}")
-    public TaskDto getTask(@PathVariable("taskId") Long taskId) {
+    public TaskDto getTask(@PathVariable("taskId") Long taskId) throws TaskNotFoundException {
         return taskMapper.mapToTaskDto(service.getTaskById(taskId));
     }
 
